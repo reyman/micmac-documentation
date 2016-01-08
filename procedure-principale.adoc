@@ -10,7 +10,7 @@ Population effectivement partie des aéroports
 
 
 `gsum-pop-flight-expected` :: 
-Population qui aurait du partir des aéroports. En effet, du fait des différentes stratégies, il existe un différentiel entre la population destiné à monter dans un avion, et la population qui est effectivement monté dans l'avion.
+Population qui aurait du partir des aéroports. En effet, du fait des différentes stratégies, il existe pour chaque nouvel avion prêt à partir, un différentiel entre la population destiné à monter dans un avion, et la population qui est effectivement monté dans l'avion.
 
 A partir de ces populations calculées à chaque itération, on construit deux globales cumulant ces valeurs sur plusieurs itérations : 
 
