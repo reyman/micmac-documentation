@@ -71,7 +71,7 @@ La condition d'arrêt, résumé dans le schéma ci-dessus, doit pour être valid
 - Le pic épidémique est dépassé d'au moins un pas de temps : `gtime-I-Value-max < (ticks - 1)`
 - La proportion d'infecté, calculé par l'appel de la fonction `compute-pop-total-with-state "I"`, doit être inférieure à la valeur epsilon.
   
-  
+Si la condition d'arrêt est remplie, alors la simulation est stoppée, et on peut calculer les différents indicateurs de sorties.
   
   
   
