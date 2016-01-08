@@ -5,8 +5,7 @@ image::images/img-reborn-complex/ES_aeroport.svg.png[ES,width=400,align=center]
 Un aéroport est constitué d'une entrée et d'une sortie.
 Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes ( in-airport = 1 et out-airport = 1) au début du programme.
 
-Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aéroport si le seuil `gtheta1` 
-est dépassé. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
+Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aéroport si la proportion d'infecté *I* dépasse le seuil `gtheta1`. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
 `out-airport = 0`). C'est une mise en quarantaine stricte. 
 
 [source,bash]
@@ -28,7 +27,11 @@ est dépassé. Si c'est le cas on ferme les entrées et les sorties de cet aéro
  ]
 ----
  
- 
+Dans le cas de la link:./strategies.adoc[stratégie 2], on teste pour chaque aéroport si le seuil `gtheta1` 
+est dépassé. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
+`out-airport = 0`). C'est une mise en quarantaine stricte. 
+
+
 [source,bash]
 ----
 if gstrategy2 = true 
