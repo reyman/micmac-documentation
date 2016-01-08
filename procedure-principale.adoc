@@ -69,9 +69,9 @@ image::images/img-reborn-complex/condition_arret.svg.png[ES,width=800,align=cent
 La condition d'arrêt, résumé dans le schéma ci-dessus, doit pour être validé, obtenir plusieurs objectifs : 
 
 - Le pic épidémique est dépassé d'au moins un pas de temps : `gtime-I-Value-max < (ticks - 1)`
-- La proportion d'infecté, calculé par l'appel de la fonction `compute-pop-total-with-state "I"`, doit être inférieure à la valeur epsilon.
+- La somme des infectés présent dans la simulation (avions + aéroports) calculé par l'appel de la fonction `compute-pop-total-with-state "I"` est inférieure à la valeur epsilon `gEpsilon-stop`.
   
-Si la condition d'arrêt est remplie, alors la simulation est stoppée, et on peut calculer les différents indicateurs de sorties.
+Si la condition d'arrêt est remplie, alors la simulation est stoppée, et on peut calculer les différents indicateurs de sorties avec la fonction `compute-end-indicator`
   
   
   
