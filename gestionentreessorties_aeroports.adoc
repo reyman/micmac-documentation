@@ -1,8 +1,8 @@
 = gestion des entrees/sorties aeroports
 
 
-image:images/img-reborn-complex/ES_aeroport.svg[alt=""]
- 
+image::images/img-reborn-complex/ES_aeroport.svg[ES]
+
 [source,bash]
 ----
  if gstrategy1 = true 
