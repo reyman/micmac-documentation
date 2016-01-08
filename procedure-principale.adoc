@@ -3,12 +3,16 @@
 == calcul des populations 
 
 
-L'appel de la fonction qui construit les avions (`update-world`) renvoie
+L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] renvoie deux populations, stockées dans des globales :
 
-gsum-pop-flight-real
-gsum-pop-flight-expected
+ . `gsum-pop-flight-real` : population effectivement partie des aéroports
 
 
-gcumulated-pop-flight-real
+. `gsum-pop-flight-expected` : population qui aurait du partir des aéroports.
 
-gcumulated-pop-flight-expected
+A partir de ces populations calculées à chaque itération, on construit deux globales cumulant ces valeurs sur plusieurs itérations : 
+
+- `gcumulated-pop-flight-real`
+- `gcumulated-pop-flight-expected`
+
+
