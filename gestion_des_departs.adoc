@@ -15,7 +15,7 @@
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
 
-[source,logo]
+[source,bash]
 ----
     ask nodes  
     [ 
