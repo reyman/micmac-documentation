@@ -47,6 +47,9 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
 
 == Condition d'arrêts
 
+image::images/img-reborn-complex/condition_arret.svg.png[ES,width=800,align=center]
+
+ 
 [source,bash]
 ----
   if epidemy-has-begun? = 1 
@@ -61,9 +64,6 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
     stop
   ]
 ----
- 
- 
-image::images/img-reborn-complex/condition_arret.svg.png[ES,width=800,align=center]
  
  
 La condition d'arrêt, résumé dans le schéma ci-dessus, doit pour être validé, obtenir plusieurs objectifs : 
