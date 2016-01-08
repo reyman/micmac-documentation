@@ -1,6 +1,6 @@
 = procedure-principale.adoc
 
-== Mise à jour des noeuds 
+== Mise à jour des aéroports 
 
 [source,bash]
 ----
