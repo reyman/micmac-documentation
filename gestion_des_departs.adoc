@@ -27,6 +27,6 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
     [
       set stock-to-flight stock-to-flight
     ]
----
+----
 
 Le premier bloc
