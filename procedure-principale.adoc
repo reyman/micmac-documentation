@@ -5,7 +5,7 @@
 
 L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] renvoie deux populations, stockées dans des globales :
 
- . `gsum-pop-flight-real` : population effectivement partie des aéroports
+. `gsum-pop-flight-real` : population effectivement partie des aéroports
 
 
 . `gsum-pop-flight-expected` : population qui aurait du partir des aéroports.
