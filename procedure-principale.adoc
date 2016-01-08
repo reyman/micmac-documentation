@@ -1,7 +1,10 @@
 = procedure-principale.adoc
 
-== Calcul des différentes populations 
+== Mise à jour des noeuds 
 
+
+
+== Calcul des différentes populations 
 
 L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] renvoie deux populations, stockées dans des globales :
 
