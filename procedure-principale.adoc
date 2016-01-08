@@ -2,7 +2,14 @@
 
 == Mise à jour des noeuds 
 
+[source,bash]
+----
+ask nodes[
+    update-node-airport self
+  ]
+----
 
+La mise à jour des aéroports, variable selon les différentes stratégies, est décrite dans la page link:./gestionentreessorties_aeroports.adoc[gestion des entrées sorties des aéroports] 
 
 == Calcul des différentes populations 
 
