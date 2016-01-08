@@ -1,7 +1,6 @@
 = gestion des entrees/sorties aeroports
 
-[.right.text-center]
-image::images/img-reborn-complex/ES_aeroport.svg.png[ES,width=400]
+image::images/img-reborn-complex/ES_aeroport.svg.png[ES,width=400,align=center]
 
 Un aéroport est constitué d'une entrée et d'une sortie.
 Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes ( in-airport = 1 et out-airport = 1) au début du programme.
@@ -46,3 +45,5 @@ if gstrategy2 = true
      ]
    ] 
 ----
+
+
