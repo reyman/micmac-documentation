@@ -1,6 +1,12 @@
 = gestion des départs
 
-== update-world
+== Signature
+
+Une seule fonction regroupe actuellement l'ensemble des traitements permettant
+
+- Le calcul des populations destinés à partir
+- La construction des agents avions `MobileGroup`
+
 
 .Arguments de la fonction
 [options="header"]
@@ -11,6 +17,10 @@
 | #airplane-size | taille de l'avion 
 | #strat-redistribution | strategie 1
 |===
+
+Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page link:main-loop.adoc(main-loop)
+
+== Calcul des autorisations
 
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
