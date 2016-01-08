@@ -6,8 +6,7 @@
 L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] renvoie deux populations, stockées dans des globales :
 
 `gsum-pop-flight-real`:: 
-Population effectivement partie des aéroports
-
+Population effectivement partie des aéroports, c'est à dire contenu dans les avions.
 
 `gsum-pop-flight-expected` :: 
 Population qui aurait du partir des aéroports. En effet, du fait des différentes stratégies, il existe pour chaque nouvel avion prêt à partir, un différentiel entre la population destiné à monter dans un avion, et la population qui est effectivement monté dans l'avion.
