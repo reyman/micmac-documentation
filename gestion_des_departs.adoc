@@ -14,7 +14,8 @@ Les paramètres sont les suivants :
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
 
-```
+[source,logo]
+----
     ask nodes
     [
       let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes
@@ -26,6 +27,6 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
     [
       set stock-to-flight stock-to-flight
     ]
-```
+---
 
 Le premier bloc
