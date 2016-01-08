@@ -62,10 +62,14 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
   ]
 ----
  
-La condition d'arrêt pour être validé nécessite l'obtention de plusieurs objectifs : 
+ 
+image::images/img-reborn-complex/condition_arret.svg.png[ES,width=800,align=center]
+ 
+ 
+La condition d'arrêt, résumé dans le schéma ci-dessus, doit pour être validé, obtenir plusieurs objectifs : 
 
 - Le pic épidémique est dépassé d'au moins un pas de temps : `gtime-I-Value-max < (ticks - 1)`
-- 
+- La proportion d'infecté, calculé par l'appel de la fonction `compute-pop-total-with-state "I"`, doit être inférieure à la valeur epsilon.
   
   
   
