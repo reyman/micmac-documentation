@@ -1,7 +1,6 @@
-# gestion des départs
+= gestion des départs
 
-Actuellement dans la fonction **update-world**
-
+== update-world
 
 .Arguments de la fonction
 [options="header"]
