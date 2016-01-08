@@ -17,7 +17,7 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
 [source,java]
 ----
     ask nodes  
-    [
+    [ \\ <1>
       let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes
       set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly
       set #cumulated-pop-flight-expected-float #cumulated-pop-flight-expected-float + my-instantaneous-total-population-to-fly
@@ -28,5 +28,6 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
       set stock-to-flight stock-to-flight
     ]
 ----
+
 
 <1> Le premier bloc
