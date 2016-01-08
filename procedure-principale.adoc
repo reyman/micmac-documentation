@@ -9,7 +9,7 @@ ask nodes[
   ]
 ----
 
-La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite dans la page link:./gestionentreessorties_aeroports.adoc[gestion des entrées sorties des aéroports].
+La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite plus en détail dans la page link:./gestionentreessorties_aeroports.adoc[gestion des entrées sorties des aéroports].
 
 == Calcul des différentes populations 
 
