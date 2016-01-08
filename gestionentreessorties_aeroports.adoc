@@ -2,11 +2,19 @@
 
 image::images/img-reborn-complex/ES_aeroport.svg.png[ES,width=400,align=center]
 
-Un aéroport est constitué d'une entrée et d'une sortie.
-Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes ( in-airport = 1 et out-airport = 1) au début du programme.
+Chaque aéroport comprend deux arguments dédié aux entrées / sorties des avions : une entrée (`in_airport`) et une sortie (`out_airport`). 
 
+Les avions ne peuvent en effet atterrir dans un aéroport que si la sortie de l'aéroport faisant partir l'avion est ouverte (`out_airport`), et si l'entrée de l'aéroport recevant l'avion est ouverte (`in_airport = 1`).
+
+Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes au début de la simulation ( `in-airport = 1` et `out-airport = 1`) au début du programme.
+
+Le lecteur pourra remarquer dans ce diagramme d'activité que les deux stratégies sont cumulables.
+
+== Stratégie 1
 Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aéroport si la proportion d'infecté *I* dépasse le seuil `gtheta1`. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
-`out-airport = 0`). C'est une mise en quarantaine stricte. 
+`out-airport = 0`). C'est une mise en quarantaine stricte, qui dure jusqu'à ce que la proportion d'infecté *I* repasse en dessous de $$1$$.
+
+La proportion d'infecté est calcul en fonction de la population présente dans chaque aéroport $$I_{Node} + S_{Node} + R_{Node}$$
 
 [source,bash]
 ----
@@ -27,9 +35,10 @@ Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aé
  ]
 ----
  
-Dans le cas de la link:./strategies.adoc[stratégie 2], on teste pour chaque aéroport si le seuil `gtheta1` 
-est dépassé. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
-`out-airport = 0`). C'est une mise en quarantaine stricte. 
+== Stratégie 2
+ 
+Dans le cas de la link:./strategies.adoc[stratégie 2], on teste pour chaque aéroport  si la proportion d'infecté *I* dépasse le seuil `gtheta2`. Si c'est le cas on ferme les entrées de cet aéroports ( `in-airport = 1` et 
+`out-airport = 0`). La particularité 
 
 
 [source,bash]
