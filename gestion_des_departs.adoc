@@ -2,31 +2,32 @@
 
 Actuellement dans la fonction **update-world**
 
-Les paramètres sont les suivants : 
 
-| argument de la fonction | signification |
-| -- | -- |
-| #cumulated-pop-flight-expected-float | population cumulée |
-| #instantaneous-total-population-to-fly | population autorisé à voler |
-| #airplane-size | taille de l'avion |
-  
+.Arguments de la fonction
+[options="header"]
+|===
+| argument de la fonction |signification
+| #cumulated-pop-flight-expected-float| population cumulée
+| #instantaneous-total-population-to-fly | population autorisé à voler 
+| #airplane-size | taille de l'avion 
+|===
 
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
 
 [source,logo]
 ----
-    ask nodes
+    ask nodes  \\ <1>
     [
       let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes
       set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly
       set #cumulated-pop-flight-expected-float #cumulated-pop-flight-expected-float + my-instantaneous-total-population-to-fly
     ]
     
-    ask nodes 
+    ask nodes \\ <2>
     [
       set stock-to-flight stock-to-flight
     ]
 ----
 
-Le premier bloc
+<1> Le premier bloc
