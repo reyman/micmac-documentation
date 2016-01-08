@@ -12,10 +12,14 @@ Le lecteur pourra remarquer dans ce diagramme d'activité que les deux stratégi
 
 == Signature
 
-La signature de la procédure est la suivante : 
+La signature de la procédure est la suivante dans netlogo `to update-node-airport [#node]`
 
-`to update-node-airport [#node]`
-
+.Arguments de la fonction
+[options="header"]
+|===
+| argument de la fonction |signification
+| #node| aéroport à modifier
+|===
 
 
 == Stratégie 1
