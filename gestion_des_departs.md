@@ -1,9 +1,13 @@
 # gestion des départs
 
-Actuellement dans la procédure **update-world**
+Actuellement dans la fonction **update-world**
 
+Les paramètres sont les suivants : 
 
-Première partie, on calcule la population qui va être autorisé à voler.
+#cumulated-pop-flight-expected-float #instantaneous-total-population-to-fly #airplane-size
+
+Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
+
 
 ```
 ask nodes
@@ -14,4 +18,5 @@ ask nodes
       set gcumulated-pop-flight-expected-float gcumulated-pop-flight-expected-float + my-instantaneous-total-population-to-fly
     ]
 ```
+
 
