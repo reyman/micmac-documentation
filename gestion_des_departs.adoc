@@ -14,16 +14,16 @@
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
 
-[source,logo]
+[source,python]
 ----
-    ask nodes  \\ <1>
+    ask nodes # <1>
     [
       let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes
       set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly
       set #cumulated-pop-flight-expected-float #cumulated-pop-flight-expected-float + my-instantaneous-total-population-to-fly
     ]
     
-    ask nodes \\ <2>
+    ask nodes  # <2>
     [
       set stock-to-flight stock-to-flight
     ]
