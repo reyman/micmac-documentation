@@ -10,6 +10,14 @@ Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes au dé
 
 Le lecteur pourra remarquer dans ce diagramme d'activité que les deux stratégies sont cumulables, la première stratégie étant traité avant la deuxième stratégie dans le code. Selon que l'utilisateur du modèle active ou n'active pas l'une ou l'autre de ces stratégies, la combinatoire peut donc être assez complexe.
 
+== Signature
+
+La signature de la procédure est la suivante : 
+
+`to update-node-airport [#node]`
+
+
+
 == Stratégie 1
 
 Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aéroport si la proportion d'infecté *I* dépasse le seuil `gtheta1`. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
@@ -35,7 +43,8 @@ La proportion d'infecté est calcul en fonction de la population présente dans 
    ]
  ]
 ----
- 
+
+
 == Stratégie 2
  
 Dans le cas de la link:./strategies.adoc[stratégie 2], on teste pour chaque aéroport  si la proportion d'infecté *I* dépasse le seuil `gtheta2`. Si c'est le cas on ferme les entrées de cet aéroports ( `in-airport = 1` et 
