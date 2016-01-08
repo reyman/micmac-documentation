@@ -1,2 +1,36 @@
 = gestion des entrees/sorties aeroports
 
+ 
+ 
+ if gstrategy1 = true 
+ [
+   ask node 
+   [
+     ifelse (I_Node / ( I_Node + S_Node + R_Node) > gtheta1 )
+     [
+       set out-airport 0
+       set in-airport 0
+     ]
+     [
+       set out-airport 1
+       set in-airport 1
+     ]
+   ]
+ ]
+
+
+ ```
+if gstrategy2 = true 
+   [
+     ask node 
+     [
+       ifelse I_Node / ( I_Node + S_Node + R_Node) > gtheta2 
+       [
+         set in-airport 0
+       ]
+       [
+         set in-airport 1
+       ]
+     ]
+   ] 
+ ```
