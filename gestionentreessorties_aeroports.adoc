@@ -8,7 +8,7 @@ Les avions ne peuvent en effet atterrir dans un aéroport que si la sortie de l'
 
 Par défaut toutes les entrées et les sorties d'aéroports sont ouvertes au début de la simulation ( `in-airport = 1` et `out-airport = 1`) au début du programme.
 
-Le lecteur pourra remarquer dans ce diagramme d'activité que les deux stratégies sont cumulables.
+Le lecteur pourra remarquer dans ce diagramme d'activité que les deux stratégies sont cumulables, la première stratégie étant traité avant la deuxième stratégie dans le code.
 
 == Stratégie 1
 Dans le cas de la link:./strategies.adoc[stratégie 1], on teste pour chaque aéroport si la proportion d'infecté *I* dépasse le seuil `gtheta1`. Si c'est le cas on ferme les entrées et les sorties de cet aéroports ( `in-airport = 0` et 
