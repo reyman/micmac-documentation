@@ -17,4 +17,21 @@ A partir de ces populations calculées à chaque itération, on construit deux g
 - `gcumulated-pop-flight-real`
 - `gcumulated-pop-flight-expected`
 
+La variable indiquant la réduction de traffic subit à chaque itération (`gout-traffic-reduction-instantaneous`) est calculé en faisant le différentiel entre ces deux variables :
 
+[source,bash]
+----
+set gout-traffic-reduction-instantaneous (gsum-pop-flight-expected - gsum-pop-flight-real) / (max list gsum-pop-flight-expected 1)`
+----
+
+On fera attention donc dans ce calcul à une possible division par zéro, ce qui explique le code `(max list gsum-pop-flight-expected 1)`
+
+Afin de garder en mémoire quel a été la réduction maximale de traffic en fin de simulation, on garde une trace de celle-ci grâce à la variable globale `gtaux-reduc-max` :
+
+[source,bash]
+----
+    if (gtaux-reduc-max < gout-traffic-reduction-instantaneous) 
+    [
+      set gtaux-reduc-max gout-traffic-reduction-instantaneous
+    ]
+----
