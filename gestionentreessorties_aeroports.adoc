@@ -1,7 +1,7 @@
 = gestion des entrees/sorties aeroports
 
-
-image::images/img-reborn-complex/ES_aeroport.svg[ES]
+[.right.text-center]
+image::images/img-reborn-complex/ES_aeroport.svg.png[ES,scaledwidth=50%]
 
 [source,bash]
 ----
