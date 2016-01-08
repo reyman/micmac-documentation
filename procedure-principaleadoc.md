@@ -1,2 +1,0 @@
-# procedure-principale.adoc
-
