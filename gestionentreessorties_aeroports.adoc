@@ -2,7 +2,7 @@
 
 bla
  
-[source,logo]
+[source,bash]
 ----
  if gstrategy1 = true 
  [
@@ -23,7 +23,7 @@ bla
  
  bla
  
-[source,logo]
+[source,bash]
 ----
 if gstrategy2 = true 
    [
