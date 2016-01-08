@@ -1,2 +1,14 @@
-# procedure-principale.adoc
+= procedure-principale.adoc
 
+== calcul des populations 
+
+
+L'appel de la fonction qui construit les avions (`update-world`) renvoie
+
+gsum-pop-flight-real
+gsum-pop-flight-expected
+
+
+gcumulated-pop-flight-real
+
+gcumulated-pop-flight-expected
