@@ -18,7 +18,7 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 | #strat-redistribution | strategie 1
 |===
 
-Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page link:main-loop.adoc(main-loop)
+Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page décrivant la link:./procedure-principale.adoc[procédure principale].
 
 == Calcul des autorisations
 
