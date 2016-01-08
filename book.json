@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "emoji",
         "image-captions"
     ],
     "pluginsConfig": {}
