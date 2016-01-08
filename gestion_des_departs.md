@@ -5,7 +5,7 @@ Actuellement dans la procédure **update-world**
 
 Première partie, on calcule la population qui va être autorisé à voler.
 
-```python
+```
 ask nodes
     [
       let my-instantaneous-total-population-to-fly ginstantaneous-total-population-to-fly 
