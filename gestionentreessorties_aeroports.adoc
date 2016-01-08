@@ -1,7 +1,9 @@
 = gestion des entrees/sorties aeroports
 
+bla
  
- 
+[source,logo]
+----
  if gstrategy1 = true 
  [
    ask node 
@@ -17,9 +19,12 @@
      ]
    ]
  ]
-
-
- ```
+----
+ 
+ bla
+ 
+[source,logo]
+----
 if gstrategy2 = true 
    [
      ask node 
@@ -33,4 +38,4 @@ if gstrategy2 = true
        ]
      ]
    ] 
- ```
+----
