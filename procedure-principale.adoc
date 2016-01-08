@@ -44,3 +44,31 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
       set gtaux-reduc-max gout-traffic-reduction-instantaneous
     ]
 ----
+
+== Condition d'arrêts
+
+[source,bash]
+----
+  if epidemy-has-begun? = 1 
+  and gtime-I-Value-max < (ticks - 1) 
+  and (compute-pop-total-with-state "I" < gEpsilon-stop) 
+  [
+    compute-end-indicator
+  ]    
+  
+  if gduration-of-Epidemy > 0
+  [
+    stop
+  ]
+----
+ 
+La condition d'arrêt pour être validé nécessite l'obtention de plusieurs objectifs : 
+
+- Le pic épidémique est dépassé d'au moins un pas de temps : `gtime-I-Value-max < (ticks - 1)`
+- 
+  
+  
+  
+  
+  
+  
