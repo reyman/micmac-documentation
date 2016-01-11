@@ -4,7 +4,9 @@ En entrée, la procédure principale fait appel à deux variables globales :
 
 `ginstantaneous-total-population-to-fly`::
 
-Valeur calculé durant le calibrage du modèle, celle-ci est une valeur de référence indiquant la part de population qui doit être si possible maintenu en vol à tout instant. Les stratégies viennent evidemment impacter négativement la réalisation de cet objectif.
+Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
+
+Passé en paramètre de la fonction `update-world`, sont utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs]
 
 `gcumulated-pop-flight-expected-float`::
 
