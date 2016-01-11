@@ -164,8 +164,6 @@ Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieu
 
 L'activation de cette dernière stratégie implique l'existence d'avion de taille fluctuante, fonction du nombre de personnes qui ont décidé de monter ou pas dans l'avion. Cette stratégie produit donc une forme de perte qu'il convient là aussi de comptabiliser, en utilisant la variable compteur (`lost-passengers-in`) de l'aéroport cible (`end-node`). 
 
-`pop-which-leave-airport`
-
 [source,bash]
 ----
  ask end-node
@@ -176,5 +174,10 @@ L'activation de cette dernière stratégie implique l'existence d'avion de taill
   set sum-pop-flight-real (sum-pop-flight-real + pop-which-leave-airport)
   set pop-to-fly pop-to-fly - #airplane-size
 ----          
+
+A partir de là, à chaque avion parti d'un aéroport, on met à jour la somme de population ayant effectivement embarqué (`sum-pop-flight-real`)
+
+Peu importe alors pour le décompte de savoir si les avions partent plein ou moitié-vide, on considère pour la prochaine itération que l'avion est parti plein. On soustrait donc la taille de l'avion à la population restante susceptible de voler sur cet aéroport (`pop-to-fly - #airplane-size`).
+
 
 
