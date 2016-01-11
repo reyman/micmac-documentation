@@ -94,7 +94,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
       ]
 ----
 
-Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine.
+Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine. On met à jour le compteur de passager perdu (attribut `lost-passengers-in`) de chacun des noeuds destination.
 
 <1> Si par contre on trouve au moins un aéroports ( dont les variables d'E/S sont donc `in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
