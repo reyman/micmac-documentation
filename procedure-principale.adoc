@@ -8,11 +8,6 @@ Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci 
 
 Passé en paramètre de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
 
-
-`gcumulated-pop-flight-expected-float`::
-bla
-
-
 == Mise à jour des aéroports 
 
 
