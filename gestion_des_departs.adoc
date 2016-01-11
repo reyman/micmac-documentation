@@ -39,7 +39,7 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
 
 <2> On la stocke au niveau de chaque aéroport, car cette population se cumule.
 
-On assume ici le fait que la populaiton sur le noeuf est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse.
+On assume ici le fait que la populaiton sur le noeuf est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse. En effet, il est important de noter ici que cette population reste abstraite. Tant que les agents ne montent pas véritablement dans l'avion, la population réelle de SIR de l'aéroport n'est pas imputé.
 
 == Résolution des autorisations
 
@@ -66,4 +66,7 @@ Dans ce premier bloc, on initialise les valeurs suivantes :
 ----
 <1> On arrondie le stock de population (float) pour le ramener à une valeur entière (int)
 <2> On vide ce stock, mais attention, ici on conserve ce résidus de population faisant suite à cette discrétisation de la ligne précédente.
-<3> On considère que cette population va partir (ce qui ne sera peut être pas le cas en réalité, du fait des stratégies)
+<3> Cette population *est mobilisé pour partir*, ce qui ne sera peut être pas le cas en réalité, du fait des stratégies. Ce qui explique le *expected* dans le nom de cette variable.
+
+
+
