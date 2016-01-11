@@ -160,7 +160,7 @@ Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut �
     let pop-which-leave-airport generate-MobileGroup self end-node gairplane-size
 ----          
 
-Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieure à la population indiqué par la taille de l'avion `gairplane-size`. C'est en effet à ce moment là que la stratégie individuelle est utilisé, si elle est activé (`gstrategy3-riskCulture` = `true`).  
+Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieure à la population indiquée par la taille de l'avion `gairplane-size`. C'est en effet à ce moment là que la stratégie individuelle est utilisé, si celle-ci est activé (`gstrategy3-riskCulture` = `true`).  
 
 [source,bash]
 ----
@@ -172,4 +172,5 @@ Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieu
   set sum-pop-flight-real (sum-pop-flight-real + pop-which-leave-airport)
   set pop-to-fly pop-to-fly - #airplane-size
 ----          
+
 
