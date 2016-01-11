@@ -104,3 +104,4 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
       ]
 ----
 
+La population perdue est 
