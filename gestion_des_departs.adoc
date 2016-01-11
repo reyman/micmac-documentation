@@ -36,7 +36,8 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
 
 ----
 
-<1> On rapporte cette population à chaque noeud. En réalité, #instantaneous-total-population-to-fly est une constante qui n'a pas de raison de varier, car celle-ci découle du calibrage.
+<1> On rapporte cette population à chaque noeud. En réalité, `#instantaneous-total-population-to-fly` est une constante qui n'a pas de raison de varier, car celle-ci découle du calibrage. On notera ici que l'on passe d'un entier à un flottant au niveau de la population.
+
 <2> On la stocke au niveau de chaque aéroport, car cette population se cumule.
 
 On assume ici le fait que la populaiton sur le noeuf est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse.
