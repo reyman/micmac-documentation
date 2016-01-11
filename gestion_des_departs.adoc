@@ -40,3 +40,5 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
 <2> On la stocke au niveau de chaque aéroport, car cette population se cumule.
 
 On assume ici le fait que la populaiton sur le noeuf est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse.
+
+== Résolution des autorisations
