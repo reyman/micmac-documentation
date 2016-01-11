@@ -12,7 +12,6 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 [options="header"]
 |===
 | argument de la fonction |signification
-| #cumulated-pop-flight-expected-float| population cumulée
 | #instantaneous-total-population-to-fly | stock de population susceptible de partir, cumulé sur l'ensemble des noeuds.
 | #airplane-size | taille de l'avion 
 | #strategy-redistribution | booléen pour indiquer si il y a redistribution ou pas des populations en cas de non départ
