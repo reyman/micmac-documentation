@@ -122,6 +122,8 @@ C'est pour cela qu'on teste dans un deuxième temps la condition de ce nouvel a�
         ]
 ----
 
+==== aéroport fermé 
+
 Si l'aéroport cible (`end-node`) est fermé (`in-airport = 0`), dans tout les cas l'aéroport cible (`end-node`) perd des voyageurs potentiels.
 
 [source,bash]
@@ -146,12 +148,16 @@ Deux possibilités sont ensuites envisageables, fonction de la valeur de `#strat
 
 * Si cette variable est à `true` , alors on autorise la redistribution des passages vers un autre aéroport. Autrement dit, à la différence du code précédent, on ne fait rien, et le stock de population potentiellement distribuable (`pop-to-fly`) dans des vols pour cet aéroport reste inchangé.
 
+==== aéroport ouvert 
+
 Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut être généré, en appelant la fonction suivante.
 
 [source,bash]
 ----
     let pop-which-leave-airport generate-MobileGroup self end-node gairplane-size
 ----          
-          
+
+
+
           
 
