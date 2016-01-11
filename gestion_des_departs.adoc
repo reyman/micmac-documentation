@@ -160,6 +160,7 @@ Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut �
     let pop-which-leave-airport generate-MobileGroup self end-node gairplane-size
 ----          
 
+Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieure à 
 
 
           
