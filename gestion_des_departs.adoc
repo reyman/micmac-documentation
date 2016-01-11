@@ -53,7 +53,7 @@ On assume ici le fait que la populaiton sur le noeuf est toujours plus grande qu
   ]
 ----
 
-On interroge seulement les aéroports dont la sortie est ouverte, et pour lequel il existe une population prete à partir supérieure à la taille minimale d'un avion (par défaut 80) 
+On travaille sur un ensemble d'aéroports dont on sait la sortie ouverte (`out-airport = 1`), et pour lequel il existe une population prete à partir supérieure à la taille minimale d'un avion (par défaut 80) 
 
 Dans ce premier bloc, on initialise les valeurs suivantes :
 
@@ -79,9 +79,9 @@ Dans ce premier bloc, on initialise les valeurs suivantes :
     ]
 ----
 
-La condition teste si il existe au moins un un aéroport voisin, dont l'entrée (`in-airport`) est disponible pour recevoir un vol.
+La condition teste ensuite pour chacun des aéroports de cet ensemble (`out-airport = 1`) si il existe au moins un un aéroport voisin, dont l'entrée (`in-airport`) est disponible pour recevoir un vol. 
 
-<1> Si c'est le cas, alors on execute la boucle suivante qui construit et remplie les avions. 
+<1> Si c'est le cas (`in-airport = 1` et `out-airport = 1`), alors on execute la boucle suivante qui construit et remplie les avions. 
 
 [source,bash]
 ----
