@@ -15,7 +15,7 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 | #cumulated-pop-flight-expected-float| population cumulée
 | #instantaneous-total-population-to-fly | population autorisé à voler 
 | #airplane-size | taille de l'avion 
-| #strat-redistribution | strategie 1
+| #strategy-redistribution | booléen pour indiquer si il y a redistribution ou pas des populations en cas de non départ
 |===
 
 Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page décrivant la link:./procedure-principale.adoc[procédure principale].
@@ -23,7 +23,6 @@ Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total
 == Calcul des autorisations
 
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
-
 
 [source,bash]
 ----
