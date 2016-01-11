@@ -49,11 +49,11 @@ On assume ici le fait que la populaiton sur le noeuf est toujours plus grande qu
 ----
  ask nodes with [out-airport = 1 and stock-to-flight >= gairplane-size ] 
   [
-  ...
+  ... 
   ]
 ----
 
-On interroge seulement les aéroports dont la sortie est ouverte, et pour lequel il existe une population prete à partir supérieure à la taille minimale d'un avion (par défaut 80)
+On interroge seulement les aéroports dont la sortie est ouverte, et pour lequel il existe une population prete à partir supérieure à la taille minimale d'un avion (par défaut 80) 
 
 Dans ce premier bloc, on initialise les valeurs suivantes :
 
@@ -68,5 +68,28 @@ Dans ce premier bloc, on initialise les valeurs suivantes :
 <2> On vide ce stock, mais attention, ici on conserve ce résidus de population faisant suite à cette discrétisation de la ligne précédente.
 <3> Cette population *est mobilisé pour partir*, ce qui ne sera peut être pas le cas en réalité, du fait des stratégies. Ce qui explique le *expected* dans le nom de cette variable.
 
+[source,bash]
+----
+ ifelse(any? (([link-neighbors] of self) with [in-airport = 1]) ) 
+    [
+     // <1>
+    ]
+    [
+     // <2>
+    ]
+----
 
+La condition teste si il existe au moins un un aéroport voisin, dont l'entrée (`in-airport`) est disponible pour recevoir un vol.
+
+<1> Si c'est le cas, alors on execute la boucle suivante qui construit et remplie les avions. 
+
+[source,bash]
+----
+    while [pop-to-fly >= #airplane-size]
+    [
+     ...
+    ]
+----
+
+<2> Sinon
 
