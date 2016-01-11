@@ -13,7 +13,7 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 |===
 | argument de la fonction |signification
 | #cumulated-pop-flight-expected-float| population cumulée
-| #instantaneous-total-population-to-fly | population autorisé à voler 
+| #instantaneous-total-population-to-fly | stock de population susceptible de partir, cumulé sur l'ensemble des noeuds.
 | #airplane-size | taille de l'avion 
 | #strategy-redistribution | booléen pour indiquer si il y a redistribution ou pas des populations en cas de non départ
 |===
@@ -24,12 +24,13 @@ Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total
 
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
+
 [source,bash]
 ----
     ask nodes  
     [ 
-      let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes
-      set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly
+      let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes //<1>
+      set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly // <2>
     ]
     
     ask nodes  
@@ -38,3 +39,5 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
     ]
 ----
 
+<1> On rapporte cette population à chaque noeud 
+<2> bla
