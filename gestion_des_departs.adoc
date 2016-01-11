@@ -123,7 +123,7 @@ C'est pour cela qu'on teste dans un deuxième temps la condition de ce nouvel a�
 
 Les deux embranchements sont décris dans le diagramme d'activité suivant : 
 
-image:images/img-reborn-complex/test_airport_OD.svg.png[NodeDepartures,width=400,align=center]
+image:images/img-reborn-complex/test_airport_OD.svg.png[Airport Departures,width=400,align=center]
 
 ==== aéroport fermé 
 
