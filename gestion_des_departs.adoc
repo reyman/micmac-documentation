@@ -81,7 +81,7 @@ Dans ce premier bloc, on initialise les valeurs suivantes :
 
 La condition teste ensuite pour chacun des aéroports de cet ensemble (`out-airport = 1`) si il existe au moins un un aéroport voisin, dont l'entrée (`in-airport`) est disponible pour recevoir un vol. 
 
-<1> Si c'est le cas (`in-airport = 1` et `out-airport = 1`), alors on execute la boucle suivante qui construit et remplie les avions. 
+<1> Si c'est le cas (`in-airport = 1` et `out-airport = 1`), alors on execute la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
 [source,bash]
 ----
