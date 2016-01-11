@@ -43,4 +43,27 @@ On assume ici le fait que la populaiton sur le noeuf est toujours plus grande qu
 
 == Résolution des autorisations
 
+=== Premier bloc 
 
+[source,bash]
+----
+ ask nodes with [out-airport = 1 and stock-to-flight >= gairplane-size ] 
+  [
+  ...
+  ]
+----
+
+On interroge seulement les aéroports dont la sortie est ouverte, et pour lequel il existe une population prete à partir supérieure à la taille minimale d'un avion (par défaut 80)
+
+Dans ce premier bloc, on initialise les valeurs suivantes :
+
+[source,bash]
+----
+    set has-one-plane-left-airport? true
+    set pop-to-fly  int(stock-to-flight) // <1>
+    set stock-to-flight stock-to-flight - pop-to-fly ; we consider we empty the stocks ! // <2>   
+    set sum-pop-flight-expected sum-pop-flight-expected + pop-to-fly // <3>
+----
+<1> On arrondie le stock de population (float) pour le ramener à une valeur entière (int)
+<2> On vide ce stock, mais attention, ici on conserve ce résidus de population faisant suite à cette discrétisation de la ligne précédente.
+<3> On considère que cette population va partir (ce qui ne sera peut être pas le cas en réalité, du fait des stratégies)
