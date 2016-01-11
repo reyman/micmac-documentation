@@ -81,7 +81,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
     ]
 ----
 
-<2> Si il n'existe pas d'aéroport de ce type, alors la population qui aurait du partir est considérée comme perdue. Attention, là encore cette population n'est pas soustraite des stocks ( car elle n'est jamais partie )
+<2> Si il n'existe pas d'aéroport de ce type, alors la population qui aurait du partir est considéré comme une perte économique qu'il faut comptabiliser. Attention, là encore cette population abstraite n'est pas soustraite des stocks ( car elle n'est jamais partie )
 
 [source,bash]
 ----
@@ -94,7 +94,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
       ]
 ----
 
-Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine. On met à jour le compteur de passager perdu (attribut `lost-passengers-in`) de chacun des noeuds destination.
+Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine. On met à jour le compteur de passager perdus (attribut `lost-passengers-in`) de chacun des noeuds destination.
 
 <1> Si par contre on trouve au moins un aéroports ( dont les variables d'E/S sont donc `in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
@@ -102,9 +102,48 @@ Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions au
 ----
     while [pop-to-fly >= #airplane-size]
     [
+        let end-node one-of (([link-neighbors] of self))
      ...
     ]
 ----
 
+A chaque itération, on considère la production d'un nouvel avion en direction d'une destination tirée au hasard. A ce stade, et parce que les vols ne sont pas calé sur les stratégies, mais les subissent, on ne sais pas si l'aéroport est soumis à une contrainte particulière. 
 
-La population perdue est 
+C'est pour cela qu'on teste dans un deuxième temps la condition de ce nouvel aéroport tiré au hasard.
+
+[source,bash]
+----
+     ifelse [in-airport] of end-node = 0 
+        [
+        ...
+        ]
+        [
+        ...
+        ]
+----
+
+Si l'aéroport cible est fermé (`in-airport = 0`), dans tout les cas l'aéroport cible (`end-node`) perd des voyageurs potentiels.
+
+[source,bash]
+----
+          ask end-node 
+          [
+            set lost-passengers-in lost-passengers-in + gairplane-size
+          ]
+----
+
+Deux possibilités sont ensuites envisageables, fonction de la valeur de `#strategy-redistribution` : 
+
+* Si elle est a `false`, on considère le vol comme annulé, et on se retrouve dans le cas d'une perte de voyageurs qu'il faut comptabiliser, là encore coté aéroport cible.
+
+[source,bash]
+----
+          if (#strategy-redistribution = false) 
+          [
+            set pop-to-fly pop-to-fly - #airplane-size
+          ]
+----
+
+* Si cette variable est à `true` , alors on autorise la redistribution des passages vers un autre aéroport. Autrement dit, à la différence du code précédent, on ne fait rien, et le stock de population potentiellement distribuable (`pop-to-fly`) dans des vols pour cet aéroport reste inchangé.
+
+
