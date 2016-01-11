@@ -32,7 +32,6 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
       let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes //<1>
       set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly // <2>
     ]
-    
 
 ----
 
