@@ -91,5 +91,16 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
     ]
 ----
 
-<2> Sinon 
+<2> Sinon la population qui aurait du partir est considéré comme perdue. Attention, là encore cette population n'est pas soustraite des stocks car elle n'est jamais partie.
+
+[source,bash]
+----
+      let nb-noeud count([link-neighbors] of self)
+      let pop-to-distribute pop-to-fly / nb-noeud 
+      
+      ask [link-neighbors] of self 
+      [
+        set lost-passengers-in lost-passengers-in + pop-to-distribute
+      ]
+----
 
