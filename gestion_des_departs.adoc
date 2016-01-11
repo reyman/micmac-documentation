@@ -81,7 +81,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
     ]
 ----
 
-<1> Si c'est le cas (`in-airport = 1` et `out-airport = 1`), alors on execute la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
+<1> Si c'est le cas (`in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
 [source,bash]
 ----
