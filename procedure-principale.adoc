@@ -4,7 +4,7 @@ En entrée, la procédure principale fait appel à deux variables globales :
 
 `ginstantaneous-total-population-to-fly`::
 
-Valeur calculé durant le calibrage du modèle, celle-ci est une valeur de référence indiquant le stock de population qui doit être si possible (les stratégies viennent evidemment impacter la réalisation de cet objectif) maitenu en vol à tout instant.
+Valeur calculé durant le calibrage du modèle, celle-ci est une valeur de référence indiquant la part de population qui doit être si possible maintenu en vol à tout instant. Les stratégies viennent evidemment impacter la réalisation de cet objectif.
 
 `gcumulated-pop-flight-expected-float`::
 
