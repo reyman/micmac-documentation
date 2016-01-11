@@ -162,7 +162,7 @@ Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut �
 
 Cette fonction `generate-MobileGroup` renvoie une population égale ou inférieure à la population indiquée par la taille de l'avion `gairplane-size` : `pop-which-leave-airport`. C'est en effet à ce moment là que la link:./strategies.adoc[stratégie individuelle] (culture du risque) est utilisée, si celle-ci est activée (`gstrategy3-riskCulture` = `true`).  
 
-L'activation de cette dernière stratégie implique l'existence d'avion de taille fluctuante, fonction du nombre de personnes qui ont décidé de monter ou pas dans l'avion. Cette stratégie produit donc une forme de perte qu'il convient là aussi de comptabiliser, en utilisant la variable compteur `lost-passengers-in` de l'aéroport cible. 
+L'activation de cette dernière stratégie implique l'existence d'avion de taille fluctuante, fonction du nombre de personnes qui ont décidé de monter ou pas dans l'avion. Cette stratégie produit donc une forme de perte qu'il convient là aussi de comptabiliser, en utilisant la variable compteur (`lost-passengers-in`) de l'aéroport cible (`end-node`). 
 
 `pop-which-leave-airport`
 
