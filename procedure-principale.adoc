@@ -1,5 +1,15 @@
 = procedure-principale.adoc
 
+En entrée, la procédure principale fait appel à deux variables globales :
+
+`ginstantaneous-total-population-to-fly`::
+
+Valeur calculé durant le calibrage du modèle, celle-ci est une valeur de référence indiquant le stock de population qui doit être si possible (les stratégies viennent evidemment impacter la réalisation de cet objectif) maitenu en vol à tout instant.
+
+`gcumulated-pop-flight-expected-float`::
+
+
+
 == Mise à jour des aéroports 
 
 [source,bash]
