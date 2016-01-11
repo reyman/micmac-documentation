@@ -20,7 +20,7 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 
 Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page décrivant la link:./procedure-principale.adoc[procédure principale].
 
-== Calcul des autorisations
+== Calcul de la population
 
 Première partie, on calcule au niveau des noeud la population qui va être autorisé à voler.
 
