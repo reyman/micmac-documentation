@@ -1,25 +1,14 @@
 = procedure-principale.adoc
 
-En entrée, la procédure principale fait appel à plusieurs variables globales :
-
-`ginstantaneous-total-population-to-fly`::
-
-Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
-
-`gairplane-size`::
-
-
-Ces trois globales sont passées en paramètres de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
-
 
 Le découpage et l'ordonnancement du code de cette procédure est la suivante : 
 
-. mise à jour des aéroports
+. mise à jour des états d'E/S des aéroports
 . calcul des conditions d'arrêts
 . itération du modèle
-. recalcul
+. mise à jour des moniteurs de traffic 
 
-== Mise à jour des aéroports 
+== Mise à jour des états d'E/S des aéroports
 
 [source,bash]
 ----
@@ -30,14 +19,29 @@ ask nodes[
 
 La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite plus en détail dans la page link:./gestionentreessorties_aeroports.adoc[gestion des entrées sorties des aéroports].
 
-== Calcul des différentes populations 
+== Instanciation du traffic sur les noeuds
 
-L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] renvoie deux populations, stockées dans des globales :
+Ces trois globales sont passées en paramètres de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
 
-`gsum-pop-flight-real`:: 
+
+L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] prend trois globales en paramètres
+
+ `ginstantaneous-total-population-to-fly`::
+Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
+
+ `gairplane-size`:: 
+ La taille d'un avion tel que définit par l'utilisateur
+
+ `gstrategy-redistribution` :: 
+ Le paramètre de redistribution (oui/non) déterminant la façon dont doivent être comptabilisé les pertes de traffic en cas d'impossibilité d'atterir sur l'aéroport selectionné comme destination d'un avion (reroutage des populations, ou perte sèche).
+
+
+Celle-ci renvoie en retour deux populations, stockées là aussi dans des globales :
+
+ `gsum-pop-flight-real`:: 
 Population effectivement partie des aéroports, c'est à dire contenu dans les avions.
 
-`gsum-pop-flight-expected` :: 
+ `gsum-pop-flight-expected` :: 
 Population qui aurait du partir des aéroports. En effet, du fait des différentes stratégies, il existe pour chaque nouvel avion prêt à partir, un différentiel entre la population destiné à monter dans un avion, et la population qui est effectivement monté dans l'avion.
 
 A partir de ces populations calculées à chaque itération, on construit deux globales cumulant ces valeurs sur plusieurs itérations : 
@@ -63,6 +67,7 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
       set gtaux-reduc-max gout-traffic-reduction-instantaneous
     ]
 ----
+
 
 == Condition d'arrêts
 
@@ -92,6 +97,9 @@ La condition d'arrêt, résumé dans le schéma ci-dessus, doit pour être valid
   
 Si la condition d'arrêt est remplie, alors la simulation est stoppée, et on peut calculer les différents indicateurs de sorties avec la fonction `compute-end-indicator`
   
-  
+== itération du monde 
+
+
+
   
   
