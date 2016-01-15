@@ -1,6 +1,6 @@
 = procedure-principale.adoc
 
-En entrée, la procédure principale fait appel à deux variables globales :
+En entrée, la procédure principale fait appel à une variable globale :
 
 `ginstantaneous-total-population-to-fly`::
 
