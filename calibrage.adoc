@@ -16,8 +16,30 @@ La méthode `compute-SIR-testNode` est appelée à chaque itération du modèle 
 
 === Signature
 
-Une fonction est utilisé pour le calibage des noeuds du modèle :
+La signature de la fonction est la suivante dans netlogo `to do-calibrage [#mobility-rate #S-At-Node #I-At-Node #R-At-Node #number-nodes #beta #h #TerritorySize-km #durationEpidemy-days #Epsilon]`
 
-- do-calibrage
+.Arguments de la fonction
+[options="header"]
+|===
+| argument de la fonction |signification
+| #mobility-rate | aéroport à modifier
+| #S-At-Node | valeur du stock S voulue pour le noeud de calibrage
+| #I-At-Node | valeur du stock I voulue pour le noeud de calibrage
+| #R-At-Node | valeur du stock R voulue pour le noeud de calibrage
+| #number-node | nombre de noeuds définies pour le modèle
+| #beta | valeur beta 
+| #h | valeur de h
+| #TerritorySize-km | taille du territoire  
+| #durationEpidemy-days | durée de l'épidémie
+| #Epsilon | epsilon
+|===
 
+
+.Retour attendu de la fonction
+[options="header"]
+|===
+| #speed-factor | Vitesse des véhicule
+| #nbStepCalib |
+| #instantaneous-total-population-to-fly |
+|===
 
