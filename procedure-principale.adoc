@@ -3,9 +3,9 @@
 
 Le découpage et l'ordonnancement du code de cette procédure est la suivante : 
 
-. mise à jour des états d'E/S des aéroports
-. calcul des conditions d'arrêts
-. itération du modèle
+. Mise à jour des états d'E/S des aéroports
+. Calcul des conditions d'arrêts
+. Itération du modèle
 . mise à jour des moniteurs de traffic 
 
 == Mise à jour des états d'E/S des aéroports
