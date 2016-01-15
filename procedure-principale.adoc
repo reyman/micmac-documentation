@@ -40,7 +40,9 @@ Population effectivement partie des aéroports, c'est à dire contenu dans les a
  `gsum-pop-flight-expected` :: 
 Population qui aurait du partir des aéroports. En effet, du fait des différentes stratégies, il existe pour chaque nouvel avion prêt à partir, un différentiel entre la population destiné à monter dans un avion, et la population qui est effectivement monté dans l'avion.
 
-A partir de ces populations calculées à chaque itération, on construit deux globales cumulant ces valeurs sur plusieurs itérations : 
+== Mise à jour des états d'E/S des aéroports
+
+A partir de ces populations calculées par `update-world` à chaque itération, on construit deux globales cumulant ces valeurs sur plusieurs itérations : 
 
 - `gcumulated-pop-flight-real`
 - `gcumulated-pop-flight-expected`
