@@ -27,7 +27,7 @@ Ces trois globales sont passées en paramètres de la fonction `update-world`, d
 L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] prend trois globales en paramètres
 
  `ginstantaneous-total-population-to-fly`::
-Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
+Valeur calculée durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence (constante) indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
 
  `gairplane-size`:: 
  La taille d'un avion tel que définit par l'utilisateur
