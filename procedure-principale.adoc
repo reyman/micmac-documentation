@@ -1,15 +1,25 @@
 = procedure-principale.adoc
 
-En entrée, la procédure principale fait appel à une variable globale :
+En entrée, la procédure principale fait appel à plusieurs variables globales :
 
 `ginstantaneous-total-population-to-fly`::
 
 Valeur calculé durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
 
-Passé en paramètre de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
+`gairplane-size`::
+
+
+Ces trois globales sont passées en paramètres de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
+
+
+Le découpage et l'ordonnancement du code de cette procédure est la suivante : 
+
+. mise à jour des aéroports
+. calcul des conditions d'arrêts
+. itération du modèle
+. recalcul
 
 == Mise à jour des aéroports 
-
 
 [source,bash]
 ----
