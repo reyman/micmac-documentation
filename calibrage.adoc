@@ -1,2 +1,23 @@
-= calibrage
+= Tests et calibrages
+
+== Noeud test SIR
+
+Les utilitaires qui touchent au calibrage et à la vérification du modèles MicMac sont regroupées dans le fichier `calibration_and_test.nls` :
+
+Trois procédures servent à initialiser, et mettre à jour le noeud test  `nodeTests` :
+
+- create-testNode 
+- infect-testNode
+- compute-SIR-testNode 
+
+La méthode `compute-SIR-testNode` est appelée à chaque itération du modèle dans `update-world`, cette procédure met à jour les stock SIR de `nodeTests`.
+
+== Calibrage
+
+=== Signature
+
+Une fonction est utilisé pour le calibage des noeuds du modèle :
+
+- do-calibrage
+
 
