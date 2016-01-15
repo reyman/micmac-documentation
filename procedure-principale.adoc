@@ -32,7 +32,6 @@ Valeur calculée durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci
  `gstrategy-redistribution` :: 
  Le paramètre de redistribution (oui/non) déterminant la façon dont doivent être comptabilisé les pertes de traffic en cas d'impossibilité d'atterir sur l'aéroport selectionné comme destination d'un avion (reroutage des populations, ou perte sèche).
 
-
 Celle-ci renvoie en retour deux populations, stockées là aussi dans des globales :
 
  `gsum-pop-flight-real`:: 
