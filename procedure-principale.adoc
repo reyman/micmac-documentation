@@ -21,7 +21,7 @@ La mise à jour des aéroports est variable selon les différentes stratégies, 
 
 == Instanciation du traffic sur les noeuds
 
-Ces trois globales sont passées en paramètres de la fonction `update-world`, décrites un peu plus bas de de document, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
+Ces trois globales sont passées en paramètres de la fonction `update-world`, son utilisation est décrite sur la page link:.\gestion_des_departs.adoc[gestion des départs].
 
 
 L'appel de la fonction qui construit les avions (`update-world`), décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] prend trois globales en paramètres
