@@ -34,12 +34,22 @@ La signature de la fonction est la suivante dans netlogo `to do-calibrage [#mobi
 | #Epsilon | epsilon
 |===
 
-
 .Retour attendu de la fonction
 [options="header"]
 |===
+| argument de la fonction |signification
 | #speed-factor | Vitesse des véhicule
-| #nbStepCalib |
-| #instantaneous-total-population-to-fly |
+| #nbStepCalib | Le nombre de pas nécessaire avant extinction de l'épidémie (I inf. à Epsilon)
+| #instantaneous-total-population-to-fly | 
 |===
 
+=== Calcul des sorties
+
+La sortie `#instantaneous-total-population-to-fly` est calculée en tenant compte : 
+
+. de la population totale $$P_{totale}$$ équivalente à l'ensemble des stocks (I+S+R) sur les noeuds ,
+. du taux de mobilité $$mr$$ défini de façon globale par l'utilisateur,
+. de la durée d'épidémie $$d$$ fonction de la maladie choisie ,
+. $$nbStep$$ qui est le nombre de pas de temps (ou de recalcul RK4 du SIR) nécessaire au SIR sur un noeud avant que l'épidémie ne s'étéigne (`I_Node` inf. `#Epsilon`) 
+
+Le calcul résumé est le suivant : $$ \frac{(P_{totale} * mr * d )}{ nbStepCalib }$$
