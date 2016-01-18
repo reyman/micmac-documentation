@@ -23,6 +23,8 @@ La mise à jour des aéroports est variable selon les différentes stratégies, 
 
 L'appel de la fonction `update-world` qui construit et distribue les avions , décrite sur la page link:./gestion_des_departs.adoc[gestion des départs] prend trois globales en paramètres
 
+=== Entrées
+
  `ginstantaneous-total-population-to-fly`::
 Valeur calculée durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence (constante) indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
 
@@ -31,6 +33,9 @@ Valeur calculée durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci
 
  `gstrategy-redistribution` :: 
  Le paramètre de redistribution (oui/non) déterminant la façon dont doivent être comptabilisé les pertes de traffic en cas d'impossibilité d'atterir sur l'aéroport selectionné comme destination d'un avion (reroutage des populations, ou perte sèche).
+
+
+=== Sorties
 
 Celle-ci renvoie en retour deux populations, stockées là aussi dans des globales :
 
@@ -65,7 +70,6 @@ Afin de garder en mémoire quel a été la réduction maximale de traffic en fin
       set gtaux-reduc-max gout-traffic-reduction-instantaneous
     ]
 ----
-
 
 == Condition d'arrêts
 
