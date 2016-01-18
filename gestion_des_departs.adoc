@@ -125,10 +125,6 @@ C'est pour cela qu'on teste dans un deuxième temps la condition de ce nouvel a�
         ]
 ----
 
-Les deux embranchements possibles sont décris dans le diagramme d'activité suivant : 
-
-image:images/img-reborn-complex/test_airport_OD.svg.png[Airport selection,width=400,align=center]
-
 ==== Cas (1) de l'aéroport fermé 
 
 Si l'aéroport cible (`end-node`) est fermé (`in-airport = 0`), dans tout les cas l'aéroport cible (`end-node`) perd des voyageurs potentiels.
@@ -182,6 +178,10 @@ L'activation de cette dernière stratégie implique l'existence d'avion de taill
 A partir de là, à chaque avion parti d'un aéroport, on met à jour la somme de population ayant effectivement embarqué (`sum-pop-flight-real`)
 
 Peu importe alors pour le décompte de savoir si les avions partent plein ou moitié-vide, on considère pour la prochaine itération que l'avion est parti plein. On soustrait donc la taille de l'avion à la population restante susceptible de voler sur cet aéroport (`pop-to-fly - #airplane-size`).
+
+Ces deux embranchements possibles précédemment décrit (cas 1 et 2) sont résumés dans le diagramme d'activité suivant : 
+
+image:images/img-reborn-complex/test_airport_OD.svg.png[Airport selection,width=400,align=center]
 
 
 
