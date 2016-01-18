@@ -80,7 +80,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
     ]
 ----
 
-<2> Si il n'existe pas d'aéroport de ce type, alors la population qui aurait du partir est considéré comme une perte économique qu'il faut comptabiliser. Attention, là encore cette population abstraite n'est pas soustraite des stocks ( car elle n'est jamais partie )
+Dans le cas **(2)** Si il n'existe pas d'aéroport de ce type, alors la population qui aurait du partir est considéré comme une perte économique qu'il faut comptabiliser. Attention, là encore cette population abstraite n'est pas soustraite des stocks ( car elle n'est jamais partie )
 
 [source,bash]
 ----
@@ -95,7 +95,7 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
 
 Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine. On met à jour le compteur de passager perdus (attribut `lost-passengers-in`) de chacun des noeuds destination.
 
-<1> Si par contre on trouve au moins un aéroports ( dont les variables d'E/S sont donc `in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
+Dans le cas **(1)**, ou l'algorithme trouve au moins un aéroport ( dont les variables d'E/S sont donc `in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
 [source,bash]
 ----
