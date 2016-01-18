@@ -129,7 +129,7 @@ Les deux embranchements possibles sont décris dans le diagramme d'activité sui
 
 image:images/img-reborn-complex/test_airport_OD.svg.png[Airport selection,width=400,align=center]
 
-==== cas (1) de l'aéroport fermé 
+==== Cas (1) de l'aéroport fermé 
 
 Si l'aéroport cible (`end-node`) est fermé (`in-airport = 0`), dans tout les cas l'aéroport cible (`end-node`) perd des voyageurs potentiels.
 
@@ -155,7 +155,7 @@ Deux possibilités sont ensuites envisageables, fonction de la valeur de `#strat
 
 * Si cette variable est à `true` , alors on autorise la redistribution des passages vers un autre aéroport. Autrement dit, à la différence du code précédent, on ne fait rien, et le stock de population potentiellement distribuable (`pop-to-fly`) dans des vols pour cet aéroport reste inchangé.
 
-==== cas (2) de l'aéroport ouvert 
+==== Cas (2) de l'aéroport ouvert 
 
 Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut être généré, en appelant la fonction suivante.
 
