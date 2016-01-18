@@ -80,6 +80,8 @@ La condition ci-dessous teste ensuite pour chacun des aéroports de cet ensemble
     ]
 ----
 
+=== embranchement (2)
+
 Dans le cas **(2)** Si il n'existe pas d'aéroport de ce type, alors la population qui aurait du partir est considéré comme une perte économique qu'il faut comptabiliser. Attention, là encore cette population abstraite n'est pas soustraite des stocks ( car elle n'est jamais partie )
 
 [source,bash]
@@ -94,6 +96,8 @@ Dans le cas **(2)** Si il n'existe pas d'aéroport de ce type, alors la populati
 ----
 
 Par défaut, et comme on ne peut pas imaginer vers quel aéroports les avions aurait pu se diriger, on repercute la perte sur l'ensemble des aéroports rattachés à l'aéroport d'origine. On met à jour le compteur de passager perdus (attribut `lost-passengers-in`) de chacun des noeuds destination.
+
+=== embranchement (1) 
 
 Dans le cas **(1)**, ou l'algorithme trouve au moins un aéroport ( dont les variables d'E/S sont donc `in-airport = 1` et `out-airport = 1`), alors on autorise pour cet aéroport l'execution de la boucle suivante qui résoud les stratégies en même temps qu'elle construit et remplit les avions.
 
@@ -121,11 +125,11 @@ C'est pour cela qu'on teste dans un deuxième temps la condition de ce nouvel a�
         ]
 ----
 
-Les deux embranchements sont décris dans le diagramme d'activité suivant : 
+Les deux embranchements possibles sont décris dans le diagramme d'activité suivant : 
 
 image:images/img-reborn-complex/test_airport_OD.svg.png[Airport selection,width=400,align=center]
 
-==== aéroport fermé 
+==== cas de l'aéroport fermé 
 
 Si l'aéroport cible (`end-node`) est fermé (`in-airport = 0`), dans tout les cas l'aéroport cible (`end-node`) perd des voyageurs potentiels.
 
@@ -151,7 +155,7 @@ Deux possibilités sont ensuites envisageables, fonction de la valeur de `#strat
 
 * Si cette variable est à `true` , alors on autorise la redistribution des passages vers un autre aéroport. Autrement dit, à la différence du code précédent, on ne fait rien, et le stock de population potentiellement distribuable (`pop-to-fly`) dans des vols pour cet aéroport reste inchangé.
 
-==== aéroport ouvert 
+==== cas de l'aéroport ouvert 
 
 Si l'aéroport cible (`end-node`) est ouvert (`in-airport = 1`), un avion peut être généré, en appelant la fonction suivante.
 
