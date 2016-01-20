@@ -1,2 +1,4 @@
 # Lotterie
 
+La selection des passagers se fait en deux temps :
+
