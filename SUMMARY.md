@@ -7,5 +7,6 @@
    * [procedure principale](procedure-principale.adoc)
    * [strategies](strategies.adoc)
    * [calibrage](calibrage.adoc)
+   * Lotterie
 * [MicMac-reborn-simple](micmac-reborn-simple.adoc)
 
