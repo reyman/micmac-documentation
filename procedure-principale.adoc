@@ -25,7 +25,7 @@ L'appel de la fonction `update-world` qui construit et distribue les avions , d�
 
 === Entrées
 
- `ginstantaneous-total-population-to-fly`::
+ `gpotential-population-departure`::
 Valeur calculée durant le link:./calibrage.adoc[calibrage] du modèle, celle-ci est une valeur de référence (constante) indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
 
  `gairplane-size`:: 
