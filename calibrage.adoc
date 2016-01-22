@@ -45,7 +45,7 @@ La signature de la fonction est la suivante dans netlogo `to do-calibrage [#mobi
 
 === Calcul des sorties
 
-La sortie `#instantaneous-total-population-to-fly` est calculée en tenant compte : 
+La sortie `#potential-population-departure` est calculée en tenant compte : 
 
 . de la population totale $$P_{totale}$$ équivalente à l'ensemble des stocks (I+S+R) sur les noeuds ,
 . du taux de mobilité $$mr$$ défini de façon globale par l'utilisateur,
