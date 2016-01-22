@@ -17,7 +17,7 @@ Une seule fonction regroupe actuellement l'ensemble des traitements permettant
 | #strategy-redistribution | booléen pour indiquer si il y a redistribution ou pas des populations en cas de non départ
 |===
 
-Les populations (`#cumulated-pop-flight-expected-float` et `#instantaneous-total-population-to-fly`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page décrivant la link:./procedure-principale.adoc[procédure principale].
+Les populations (`#cumulated-pop-flight-expected-float` et `#potential-population-departure`) qui sont passés en paramètres de cette fonction sont mis à jour à chaque nouvelle itération du modèle (`ticks`). Le calcul de ces populations est décrit sur la page décrivant la link:./procedure-principale.adoc[procédure principale].
 
 == Mise à jour de la population de chaque noeud
 
@@ -26,19 +26,20 @@ Première partie, on calcule au niveau des noeud la population qui va être auto
 
 [source,bash]
 ----
+let potential-population-departure-by-node #potential-population-departure / number-nodes 
+
     ask nodes  
     [ 
-      let my-instantaneous-total-population-to-fly #instantaneous-total-population-to-fly / number-nodes //<1>
-      set stock-to-flight stock-to-flight + my-instantaneous-total-population-to-fly // <2>
+      set stock-to-flight stock-to-flight + potential-population-departure-by-node 
     ]
 
 ----
 
-<1> On rapporte cette population à chaque noeud. En réalité, `#instantaneous-total-population-to-fly` est une constante qui n'a pas de raison de varier, car celle-ci découle du calibrage. On notera ici que l'on passe d'un entier à un flottant au niveau de la population.
+On rapporte cette population à chaque noeud. En réalité, `#potential-population-departure` est une constante fixé lors du calibrage, qui n'a pas de raison de varier. On notera ici que l'on passe d'un entier à un flottant au niveau de la population.
 
-<2> On la stocke au niveau de chaque aéroport, car cette population se cumule.
+Cette population est réattribué à chaque pas de temps pour chaque aéroport. Celle-ci se cumule dans `stock-to-flight` qui contient toujours une population résiduelle de population n'ayant pu être attribué aux avions.
 
-On assume ici le fait que la populaiton sur le noeuf est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse. En effet, il est important de noter ici que cette population reste abstraite. Tant que les agents ne montent pas véritablement dans l'avion, la population réelle de SIR de l'aéroport n'est pas imputé.
+On assume ici le fait que la populaiton sur l'aéroport est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse. En effet, il est important d'appuyer ici sur le fait que cette population reste à ce moment là encore abstraite. Tant que les agents ne montent pas véritablement dans l'avion, la population réelle (stock SIR) de l'aéroport n'est pas imputé !
 
 == Résolution des autorisations
 
