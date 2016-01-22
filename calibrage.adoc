@@ -40,7 +40,7 @@ La signature de la fonction est la suivante dans netlogo `to do-calibrage [#mobi
 | argument de la fonction |signification
 | #speed-factor | Vitesse des véhicule
 | #nbStepCalib | Le nombre de pas nécessaire avant extinction de l'épidémie (I inf. à Epsilon)
-| #instantaneous-total-population-to-fly | 
+| #potential-population-departure | La population susceptible de voler à chaque pas de temps. Un stock global ventilé ensuite sur chaque noeud. 
 |===
 
 === Calcul des sorties
