@@ -39,7 +39,7 @@ On rapporte cette population à chaque noeud. En réalité, `#potential-populati
 
 Cette population est réattribué à chaque pas de temps pour chaque aéroport. Celle-ci se cumule dans `stock-to-flight` qui contient toujours une population résiduelle de population n'ayant pu être attribué aux avions.
 
-On assume ici le fait que la populaiton sur l'aéroport est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse. En effet, il est important d'appuyer ici sur le fait que cette population reste à ce moment là encore abstraite. Tant que les agents ne montent pas véritablement dans l'avion, la population réelle (stock SIR) de l'aéroport n'est pas imputé !
+On assume ici le fait que la population sur l'aéroport est toujours plus grande que la population amené à voyager, ce qui explique l'absence de code testant cette hypothèse. En effet, il est important d'appuyer ici sur le fait que cette population reste à ce moment là encore abstraite. Tant que les agents ne montent pas véritablement dans l'avion, la population réelle (stock SIR) de l'aéroport n'est pas imputé !
 
 == Résolution des autorisations
 
