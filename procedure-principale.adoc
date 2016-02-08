@@ -1,7 +1,7 @@
 = procedure-principale.adoc
 
 
-Le découpage et l'ordonnancement du code de cette procédure est la suivante : 
+Le découpage et l'ordonnancement du code de cette procédure nommé `main-loop` est la suivante : 
 
 . Mise à jour des états d'E/S des aéroports
 . Calcul des conditions d'arrêts
