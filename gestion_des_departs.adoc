@@ -2,11 +2,10 @@
 
 == Signature
 
-Une seule fonction regroupe actuellement l'ensemble des traitements permettant
+Une seule fonction nommé `update-world` regroupe actuellement l'ensemble des traitements permettant :
 
 - Le calcul des populations destinés à partir
 - La construction des agents avions `MobileGroup`
-
 
 .Arguments de la fonction
 [options="header"]
