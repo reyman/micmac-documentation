@@ -6,7 +6,8 @@ Un algorithme dit de "loterie" a donc été introduit. Cet algorithme est prése
 
 Etant donné un ensemble de valeurs (entières) représentant le nombre d'individus dans chacun des état, \texttt{find-state} choisit au hasard l'un des états avec une probabilité proportionnelle au nombre d'individus dans cet état. Cette fonction renvoie une valeur entière représentant l'état choisi, cet entier correspond à l'index de l'état choisi dans la liste passée en paramètre.
 
-\begin{lstlisting}
+[source,bash]
+----
 to-report find-state [#roundedStock]
    
    let roundedPop sum #roundedStock
@@ -31,7 +32,7 @@ to-report find-state [#roundedStock]
 
     report state
 end
-\end{lstlisting}
+----
 
 La fonction \texttt{generate-Group} prend en paramètre la liste du nombre des individus dans chacun des états possibles \texttt{pop} et le nombre d'individus dans le groupe à générer (\texttt{sample\_number}). Elle renvoie le groupe généré contenant \texttt{sample\_number} individus avec la même proportions d'individus dans chacun des états que \texttt{pop}. Le groupe généré contient un nombre entier dans chacun des états. De plus la population renvoyée est ôtée de la population passée en paramètre.
 Dans cette fonction, deux précautions sont prises préalablement :
@@ -42,7 +43,8 @@ Dans cette fonction, deux précautions sont prises préalablement :
 
 Ensuite la fonction \texttt{find-state} est appelée \texttt{int(sample\_number)}. A chaque appel, un individu est extrait de la population initiale et ajouté à la population qui va être renvoyée. En conséquence (d'après l'algorithme de \texttt{find-state}), si à un moment au cours de l'exécution de l'algorithme le nombre d'individus (de la population passée en paramètre) dans un des états passe à $0$, aucun individu dans cet état ne pourra plus être tiré.
 
-\begin{lstlisting}
+[source,bash]
+----
 to-report generate-Group [pop sample_number]
     let rounded_pop recompute-rounded-population pop
     let S_pop item 0 rounded_pop 
@@ -85,15 +87,14 @@ to-report generate-Group [pop sample_number]
 report (list Si Ii Ri)
 end
 
-\end{lstlisting}
+----
 
-\begin{lstlisting}
+[source,bash]
+----
 to-report recompute-rounded-population [pop]  
   report (list int(item 0 pop) int(item 1 pop) int(item 2 pop))
 end 
-\end{lstlisting}
-
-
+----
 
 == 
 
