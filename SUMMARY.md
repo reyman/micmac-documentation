@@ -8,5 +8,6 @@
    * [strategies](strategies.adoc)
    * [calibrage](calibrage.adoc)
    * [Lotterie](lotterie.adoc)
+   * Sorties
 * [MicMac-reborn-simple](micmac-reborn-simple.adoc)
 
