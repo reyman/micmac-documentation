@@ -45,48 +45,50 @@ Ensuite la fonction \texttt{find-state} est appelée \texttt{int(sample\_number)
 
 [source,bash]
 ----
-to-report generate-Group [pop sample_number]
-    let rounded_pop recompute-rounded-population pop
-    let S_pop item 0 rounded_pop 
-    let I_pop item 1 rounded_pop 
-    let R_pop item 2 rounded_pop 
-    
-    let state 0
-    let Si 0
-    let Ii 0
-    let Ri 0
-
-    if ((sum rounded_pop) >= int(sample_number))
-    [ 
+to-report generate-passengers [pop sample_number]
+  
+  let rounded_pop recompute-rounded-population pop
+  let S_pop item 0 rounded_pop 
+  let I_pop item 1 rounded_pop 
+  let R_pop item 2 rounded_pop 
+  
+  let state 0
+  let Si 0
+  let Ii 0
+  let Ri 0
+  
+      if ((sum rounded_pop) >= int(sample_number))
+      [ 
         ;; One returned state by find-state
-        repeat int(sample_number) 
+        repeat sample_number 
         [ 
           ;;compute/recompute population at each turn
-          set state find-state (list S_pop I_pop R_pop)
+          set state find-state recompute-rounded-population (list S_pop I_pop R_pop)
           
           if state = 1 [
             set Si Si + 1
-            ;; acting on real stock
             set S_pop S_pop - 1
           ]
           
           if state = 2 [
             set Ii Ii + 1
-            ;; acting on real stock
             set I_pop I_pop - 1
           ]
           
           if state = 3 [
             set Ri Ri + 1
-            ;; acting on real stock
             set R_pop R_pop - 1
           ]
         ]
-    ]
-    
-report (list Si Ii Ri)
+      ]
+ 
+ if Si  = 0 and Ii = 0 and Ri = 0  [ 
+         show "ERROR STATE EQUAL TO 0"
+         print sum rounded_pop
+   ]
+ 
+ report (list Si Ii Ri)
 end
-
 ----
 
 [source,bash]
