@@ -22,7 +22,7 @@ La signature de la fonction est la suivante dans netlogo `to do-calibrage [#mobi
 [options="header"]
 |===
 | argument de la fonction |signification
-| #mobility-rate | aéroport à modifier
+| #mobility-rate | taux de mobilité fixé
 | #S-At-Node | valeur du stock S voulue pour le noeud de calibrage
 | #I-At-Node | valeur du stock I voulue pour le noeud de calibrage
 | #R-At-Node | valeur du stock R voulue pour le noeud de calibrage
