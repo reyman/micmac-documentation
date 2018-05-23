@@ -1,20 +1,23 @@
 # procedure principale
 
-= procedure-principale.adoc
+## Procédure principale
 
-Le découpage et l'ordonnancement du code de cette procédure nommé `main-loop` est la suivante :
+Le découpage et l'ordonnancement du code de cette procédure nommé `main-loop` est la suivante
 
-. Mise à jour des états d'E/S des aéroports . Calcul des conditions d'arrêts . Itération du modèle . Mise à jour des moniteurs de traffic
+* Mise à jour des états d'E/S des aéroports
+* Calcul des conditions d'arrêts
+* Itération du modèle 
+* Mise à jour des moniteurs de trafic
 
-== Mise à jour des états d'E/S des aéroports
+### Mise à jour des états d'E/S des aéroports
 
-## \[source,bash\]
+```text
+ ask nodes  with [compute-pop-node-floor self > 0 ][
+    update-IO-airport self
+  ]
+```
 
-ask nodes\[ update-node-airport self
-
-## \]
-
-La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite plus en détail dans la page link:./gestionentreessorties\_aeroports.adoc\[gestion des entrées sorties des aéroports\].
+La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite plus en détail dans la page[ gestion des E/S aéroports](gestion-des-e-s-aeroports.md).
 
 == Instanciation du traffic sur les noeuds
 
