@@ -19,11 +19,11 @@ Le découpage et l'ordonnancement du code de cette procédure nommé `main-loop`
 
 La mise à jour des aéroports est variable selon les différentes stratégies, la procédure qui se charge de modifier les états d'entrées et des sorties de chacun des aéroports est ainsi décrite plus en détail dans la page[ gestion des E/S aéroports](gestion-des-e-s-aeroports.md).
 
-== Instanciation du traffic sur les noeuds
+### Instanciation du traffic sur les noeuds
 
-L'appel de la fonction `update-world` qui construit et distribue les avions , décrite sur la page link:./gestion\_des\_departs.adoc\[gestion des départs\] prend trois globales en paramètres
+L'appel de la fonction `compute-departure` qui construit et distribue les avions, elle est décrite en détail dans la page [gestion des aéroports](gestion-des-departs.md)
 
-=== Entrées
+#### Entrées
 
 `gpotential-population-departure`:: Valeur calculée durant le link:./calibrage.adoc\[calibrage\] du modèle, celle-ci est une valeur de référence \(constante\) indiquant le stock de population disponible pour partir sur l'ensemble des aéroports à chaque pas de temps, avant application des stratégies.
 
@@ -31,7 +31,7 @@ L'appel de la fonction `update-world` qui construit et distribue les avions , d�
 
 `gstrategy-redistribution` :: Le paramètre de redistribution \(oui/non\) déterminant la façon dont doivent être comptabilisé les pertes de traffic en cas d'impossibilité d'atterir sur l'aéroport selectionné comme destination d'un avion \(reroutage des populations, ou perte sèche\).
 
-=== Sorties
+#### Sorties
 
 Celle-ci renvoie en retour deux populations, stockées là aussi dans des globales :
 
